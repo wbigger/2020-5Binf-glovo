@@ -9,22 +9,27 @@ var init = function() {
   // Creo un _nuovo_ elemento, con tag div e classe menu_card
   // Nota: quando uso le parentesi angolari creo un nuovo elemento
   let menu_card = $("<div>").addClass("menu_card");
-  // TODO: aggiungere tutti i sottoelementi di menu_card
-  // - per aggiungere una classe: addClass()
-  // - per aggiungere un qualsiasi altro attributo: attr(), ad esempio attr('src', 'margherita.png');
-  // - per aggiungere il contenuto di un elemento: text(), ad esempio text("Margherita")
+  let menu_img = $("<img>").attr('src', 'margherita.jpg');
+  let menu_h3 = $("<h3>").text("Margherita");
+  let menu_span = $("<span>").text("Vegetariana");
+  let menu_categories = $("<div>").addClass("menu_categories");
+  let menu_details = $("<div>").addClass("menu_details");
+  let menu_price = $("<span>").addClass("menu_price").text("€7.00");
+  let menu_add = $("<button>").addClass("menu_add").text("+");
 
+  menu_card
+    .append(menu_img)
+    .append(menu_h3)
+    .append(
+      menu_categories
+      .append(menu_span))
+    .append(
+      menu_details
+      .append(menu_price)
+      .append(menu_add)
+    );
 
-  // let menu_img = $("<img>")
-
-
-
-  // Affinché l'elemento possa essere visualizzato nella pagina, devo inserirlo da qualche parte. Nel nostro caso lo
-  // aggiungiamo alla fine (append) dell'elemento con classe "flexcontainer".
   $(".flexcontainer").append(menu_card);
-
-  
-
 
 }
 
